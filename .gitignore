@@ -18,6 +18,7 @@ ENV/
 extracted_quotations.json
 comparison_results.json
 comparison_table.xlsx
+results/
 
 # IDE
 .vscode/

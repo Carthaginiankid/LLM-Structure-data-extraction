@@ -1,6 +1,7 @@
 from pdf_loader import PDFLoader
 from llm_extractor import LLMExtractor
 import json
+import os
 
 pdf_files = [
     "pdfs/Word_Dummy_quote_filled(Word_variant1)_Guly_Display_AG.pdf",
@@ -63,7 +64,8 @@ print(f"\n{'='*60}")
 print(f"Summary: Successfully extracted {len(all_quotations)} quotation(s)")
 print(f"{'='*60}")
 
-output_file = "extracted_quotations.json"
+os.makedirs("results", exist_ok=True)
+output_file = "results/extracted_quotations.json"
 with open(output_file, 'w') as f:
     json.dump([q.model_dump() for q in all_quotations], f, indent=2, default=str)
 print(f"Saved to: {output_file}")

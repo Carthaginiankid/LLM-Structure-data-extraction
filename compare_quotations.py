@@ -40,10 +40,10 @@ print(f"\n{'='*60}")
 print(f"Successfully extracted {len(quotations)} quotation(s) from PDFs")
 print(f"{'='*60}")
 
-if len(quotations) < 4 and os.path.exists("extracted_quotations.json"):
-    print(f"\nLoading missing suppliers from extracted_quotations.json...")
+if len(quotations) < 4 and os.path.exists("results/extracted_quotations.json"):
+    print(f"\nLoading missing suppliers from results/extracted_quotations.json...")
     try:
-        with open("extracted_quotations.json", 'r') as f:
+        with open("results/extracted_quotations.json", 'r') as f:
             data = json.load(f)
             existing_names = {q.supplier_name for q in quotations}
             for item in data:
@@ -60,9 +60,10 @@ if len(quotations) < 4:
         print("Extraction errors occurred (possibly rate limits)")
 
 if quotations:
-    with open("extracted_quotations.json", 'w') as f:
+    os.makedirs("results", exist_ok=True)
+    with open("results/extracted_quotations.json", 'w') as f:
         json.dump([q.model_dump() for q in quotations], f, indent=2, default=str)
-    print(f"\nSaved {len(quotations)} quotation(s) to: extracted_quotations.json\n")
+    print(f"\nSaved {len(quotations)} quotation(s) to: results/extracted_quotations.json\n")
 
 comparator = QuotationComparator()
 comparison = comparator.compare(quotations)
@@ -123,7 +124,8 @@ if comparison.get("recommendation"):
             print(f"  - {consideration}")
     print("=" * 80)
 
-with open("comparison_results.json", 'w') as f:
+os.makedirs("results", exist_ok=True)
+with open("results/comparison_results.json", 'w') as f:
     json.dump(comparison, f, indent=2, default=str)
-comparator.export_to_excel(comparison, "comparison_table.xlsx")
-print("\nExported: comparison_results.json, comparison_table.xlsx")
+comparator.export_to_excel(comparison, "results/comparison_table.xlsx")
+print("\nExported: results/comparison_results.json, results/comparison_table.xlsx")
