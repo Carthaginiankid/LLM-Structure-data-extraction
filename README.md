@@ -65,12 +65,12 @@ GROQ_API_KEY=your_key
 
 #### 4.4 Required Input Files
 
-Place the four supplier quotation PDFs in the project directory:
+Place the four supplier quotation PDFs in the `pdfs/` directory:
 
-- `Word_Dummy_quote_filled(Word_variant1)_Guly_Display_AG.pdf`
-- `Word_Dummy_quote_filled(Word_variant2)_AOE_display_Limited.pdf`
-- `Word_dummy_quote_filled(Word_Variant4)Futura Components Ltd.pdf`
-- `Word_dummy_quote_filled(Word_Variant5)_TG_Display_Japan.pdf`
+- `pdfs/Word_Dummy_quote_filled(Word_variant1)_Guly_Display_AG.pdf`
+- `pdfs/Word_Dummy_quote_filled(Word_variant2)_AOE_display_Limited.pdf`
+- `pdfs/Word_dummy_quote_filled(Word_Variant4)Futura Components Ltd.pdf`
+- `pdfs/Word_dummy_quote_filled(Word_Variant5)_TG_Display_Japan.pdf`
 
 ### 5. Execution
 

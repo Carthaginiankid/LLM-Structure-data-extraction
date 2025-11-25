@@ -3,10 +3,10 @@ from llm_extractor import LLMExtractor
 import json
 
 pdf_files = [
-    "Word_Dummy_quote_filled(Word_variant1)_Guly_Display_AG.pdf",
-    "Word_Dummy_quote_filled(Word_variant2)_AOE_display_Limited.pdf",
-    "Word_dummy_quote_filled(Word_Variant4)Futura Components Ltd.pdf",
-    "Word_dummy_quote_filled(Word_Variant5)_TG_Display_Japan.pdf"
+    "pdfs/Word_Dummy_quote_filled(Word_variant1)_Guly_Display_AG.pdf",
+    "pdfs/Word_Dummy_quote_filled(Word_variant2)_AOE_display_Limited.pdf",
+    "pdfs/Word_dummy_quote_filled(Word_Variant4)Futura Components Ltd.pdf",
+    "pdfs/Word_dummy_quote_filled(Word_Variant5)_TG_Display_Japan.pdf"
 ]
 
 print("=" * 60)
